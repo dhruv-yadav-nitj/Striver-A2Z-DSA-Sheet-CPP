@@ -11,7 +11,7 @@ public:
     }
 };
 
-// Approach : Since we can move in both the directions in a linekd list --> we would be using two pointers --> one from start and other from end --> if left + right < val --> mvoe left forward and if left + right > val --> move right backward
+// Approach : Since we can move in both the directions in a doubly linekd list --> we would be using two pointers --> one from start and other from end --> if left + right < val --> mvoe left forward and if left + right > val --> move right backward
 
 class Solution{
 public:

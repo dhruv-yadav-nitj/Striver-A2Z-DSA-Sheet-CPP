@@ -34,8 +34,8 @@ public:
             }
 
             sum += carry ;
-            ListNode* temp = new ListNode(sum %10) ; carry = sum/10 ;
-            dummyTail ->next = temp ; dummyTail = dummyTail -> next ;
+            dummyTail -> next = new ListNode(sum%10) ; carry = sum /10 ;
+            dummyTail = dummyTail -> next ;
         }
 
         return dummyHead -> next ;
