@@ -18,11 +18,11 @@ public:
             }
             else if (arr[mid] > k)
             {
-                high--;
+                high = mid-1; 
             }
             else
             {
-                low++;
+                low = mid +1 ;
             }
         }
 

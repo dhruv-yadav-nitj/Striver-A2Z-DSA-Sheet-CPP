@@ -13,13 +13,13 @@ vector<int> find(int arr[], int n , int x )
         int mid = low + (high -low)/2 ;
         
         if(arr[mid]==x){
-            first_occ = mid ; high-- ;
+            first_occ = mid ; high = mid-1 ;
         }
         else if(arr[mid] > x){
-            high-- ;
+            high = mid -1 ;
         }
         else{
-            low++ ;
+            low = mid +1 ;
         }
     }
     
@@ -33,13 +33,13 @@ vector<int> find(int arr[], int n , int x )
         int mid = low + (high -low)/2 ;
         
         if(arr[mid]==x){
-            last_occ = mid ; low++ ;
+            last_occ = mid ; low= mid +1 ;
         }
         else if(arr[mid] > x){
-            high-- ;
+            high = mid-1 ;
         }
         else{
-            low++ ;
+            low= mid+1 ;
         }
     }
     
