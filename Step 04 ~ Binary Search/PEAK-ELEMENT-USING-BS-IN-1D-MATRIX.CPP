@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
+// the array is not sorted obviously (but we would be using binary search to solve the problem)
+// remember the approach
+
 class Solution
 {
     public:
