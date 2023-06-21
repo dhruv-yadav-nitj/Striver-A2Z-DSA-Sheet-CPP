@@ -4,6 +4,8 @@ using namespace std;
 // a good applicational problem of topp sort
 // this ques tell us how in different ways can we think to solve a problem based on topo sort
 
+// every node leads to a terminal node until the node is a part of cycle in the graph
+
 class Solution{
 public:
     vector<int> eventualSafeNodes(int V, vector<int> adjo[]){
