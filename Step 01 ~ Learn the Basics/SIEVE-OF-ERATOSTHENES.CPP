@@ -19,7 +19,7 @@ void sieve(int n){
     }
 
     for(int i =2 ; i <= n ; i++){
-        if(!prime[i]){cout << i << " " ;}
+        if(prime[i]){cout << i << " " ;}
     }cout << endl ;
 }
 
