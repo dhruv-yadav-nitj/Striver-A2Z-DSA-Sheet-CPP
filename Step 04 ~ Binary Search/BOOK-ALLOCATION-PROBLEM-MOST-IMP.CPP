@@ -29,9 +29,10 @@ public:
             else
             {
                 count++;
+                // always remember this edge case -> most important
                 if (arr[i] > mid or count > m)
                 {
-                    return false; // may be there's some book jisme no. of pages mid (jo ki hmari current limit hain) usase jyada ho
+                    return false; // may be there's some book jisme no. of pages mid (jo ki hmari current limit hain) usase jyada ho -> most important edge case
                 }
                 allocated = arr[i];
             }
