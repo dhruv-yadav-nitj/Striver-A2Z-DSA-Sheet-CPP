@@ -91,9 +91,7 @@ public:
 
             }
         }
-
         return dp[n-1][3] ;
-
     }
 
     int maximumPoints(vector<vector<int>> &points, int n){
@@ -106,6 +104,65 @@ public:
         return memoization(points, n-1 , 3, dp) ;
 
         return tabulation(points, n) ;
+
+    }
+};
+
+// Revision
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution{
+public:
+    int recursion (vector<vector<int>>&points , int day , int last) {
+
+        // base condition
+        if (day < 0) {
+            return 0 ;
+        }
+
+        int maxi = INT_MIN ;
+        for(int i =0 ; i < 3 ; i++) {
+            // ith activity choose but it should not be the one chosen last day also
+            if(i != last) {
+                maxi =max(maxi , points[day][i] + recursion(points , day -1 , i));
+            }
+        }
+
+        return maxi ;
+    }
+
+    int memoization (vector<vector<int>>&points , int day , int last, vector<vector<int>>&dp) {
+
+        // base condition
+        if (day < 0) {
+            return 0 ;
+        }
+
+        if(dp[day][last] != -1) {
+            return dp[day][last] ;
+        }
+
+        int maxi = INT_MIN ;
+        for(int i =0 ; i < 3 ; i++) {
+            // ith activity choose but it should not be the one chosen last day also
+            if(i != last) {
+                maxi =max(maxi , points[day][i] + memoization(points , day -1 , i, dp));
+            }
+        }
+
+        return dp[day][last] = maxi ;
+    }
+    
+    int maximumPoints(vector<vector<int>> &points, int n){
+        // Code here
+        
+        // since matrix would be 0-based indexing -> so first day would be 0 and last day would be n -1
+        // return recursion(points, n -1 , -1) ;
+
+        // now there are two factors which decide which activity to choose -> day and last
+        vector<vector<int>> dp (n , vector<int> (4, -1)) ;
+        return memoization(points, n-1 , 3, dp) ;
 
     }
 };
