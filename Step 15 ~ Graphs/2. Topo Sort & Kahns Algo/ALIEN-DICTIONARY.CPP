@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// [HARD PROBLEM] --> But the logic is super simple
+// [GOOD PROBLEM] -> intution is very important
 // based on Kahns Algo
 
 class Solution{
