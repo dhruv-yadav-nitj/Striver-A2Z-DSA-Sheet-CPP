@@ -16,7 +16,7 @@ public:
             if(A[i] ==0 and flag) { // if we encounter the first zero from last -> store the index -> so now we have to search for an element which helps us over come this 0 wla index -> so agar us non zero element aur is current index k beech koi zero aaega to hm use ignore krenge bcz usko consider krke bhi koi faayda nhi hain -> this can be ignore using a extra boolean check
                 j = i ; flag= false ; continue;
             }
-            // if we have some index to over jump in right half then check whether current non zero element is enough or not
+            // if we encounter any non zero number which is enough large so that it can jump the index where we encountered our last zero -> then again set flag= true 
             if(!flag and A[i] > 0) {
                 if(A[i] > j -i) {
                     flag= true ;

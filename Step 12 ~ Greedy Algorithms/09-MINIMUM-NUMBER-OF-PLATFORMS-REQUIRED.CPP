@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Good Problem
+
 // Arrival and departure time can never be the same for a train but we can have arrival time of one train equal to departure time of the other.
 
 // this problem is exact opposite of the previous problem
