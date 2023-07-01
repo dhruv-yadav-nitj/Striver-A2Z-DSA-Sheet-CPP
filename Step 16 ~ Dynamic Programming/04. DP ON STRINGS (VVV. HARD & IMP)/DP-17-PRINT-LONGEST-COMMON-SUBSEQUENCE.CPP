@@ -27,7 +27,7 @@ string lcs (string s1 , string s2, int n , int m) {
 
     // so now we would be using this dp 2d vector to find our lcs
 
-    string ans (len , '0'); int index = len-1 ;
+    string ans (len , '0'); int index = len-1 ; // we can also take a normal empty string and add each letter in this string and at last just reverse this string
     int i = n , j = m ;
     while(i >0 and j > 0) {
         // match
