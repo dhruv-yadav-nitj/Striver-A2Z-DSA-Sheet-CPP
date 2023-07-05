@@ -5,6 +5,8 @@ using namespace std;
 
 // similar to gfg version of Part 1 -> we can buy and sell stocks many times and with same rule stated in the prev problem but in this problem we have to return the total profit we can earn, in prev problem gfg version we were asked to return the buy, sell pairs
 
+// https://practice.geeksforgeeks.org/problems/stock-buy-and-sell2615/1
+
 class Solution{
     public:
     long long maximumProfit(vector<long long>&prices, int n) {
