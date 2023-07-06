@@ -14,11 +14,6 @@ public:
             return 0 ;
         }
 
-        // condition 2 : if the starting element itself is 0 -> then we cant move out of it -> return -1
-        if(arr[0] == 0) {
-            return -1 ;
-        }
-
         // approach #1 : we can easily apply a bfs solution
 
         queue<pair<int,int>> q ; vector<int> jump (n , 1e9) ; // jump[i] -> denotes how much min jumps it takes to reach ith index
