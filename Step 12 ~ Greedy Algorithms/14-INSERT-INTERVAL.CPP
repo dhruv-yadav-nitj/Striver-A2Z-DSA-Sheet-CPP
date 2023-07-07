@@ -14,9 +14,9 @@ public:
             if(newEvent[1] < intervals[i][0]) {
                 ans.push_back(newEvent) ;
                 for(int j =i ; j < N ;j++) {
-                    ans.push_back(intervals[i]) ;
+                    ans.push_back(intervals[j]) ;
                 }
-                return ;
+                return ans;
             }
             // case 2 : if s > e[i]
             else if(newEvent[0] > intervals[i][1]) {
