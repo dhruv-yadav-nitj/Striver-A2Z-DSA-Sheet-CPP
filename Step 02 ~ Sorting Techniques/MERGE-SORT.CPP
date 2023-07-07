@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
+// [MERGE SORT IS PROBABLY THE MOST USED OF SORTING TECH. IT IS USED IN ARRAY AS WELL AS IN LINKED LIST]
+// [MANY PROBLEMS ARE BASED ON THIS CONCEPT OF MERGE SORT ONLY]
+// [HARD PROBLEM ON THIS CONCEPT OF MERGE SORT]
+// https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1 (Solution at the End of this Code)
+
 class Solution{
 public:
     void merge(int arr[], int l, int m, int r){ // used to merge the 2 halves of the array
@@ -44,5 +49,27 @@ public:
         mergeSort(arr, mid +1 , r) ; // right half
 
         merge(arr, l , mid , r) ;
+    }
+};
+
+
+// [MERGE TWO SORTED ARRAY WITHOUT USING EXTRA SPACE]
+// the main intuition is to use the fact that the given arrays are sorted
+class Solution {
+public:
+    void merge(long long arr1[], long long arr2[], int n, int m) {
+        // code here
+        int i = n -1 , j =0 ;
+        while(i >=0 and j < m) {
+            if(arr1[i] >= arr2[j]) {
+                swap(arr1[i] , arr2[j]) ;
+                i-- ; j++ ;
+            }
+            else{
+                break ;
+            }
+        }
+        sort(arr1,  arr1 + n) ; sort(arr2, arr2 + m) ;
+
     }
 };
