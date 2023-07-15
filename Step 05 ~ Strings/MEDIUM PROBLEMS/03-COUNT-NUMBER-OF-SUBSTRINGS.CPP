@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// need some one who can explain me this ?
+// could not understand this problem
+// this code was copy pasted from some comment for reference
 
 class Solution
 {
