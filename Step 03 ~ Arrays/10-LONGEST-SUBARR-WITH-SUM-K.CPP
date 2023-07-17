@@ -61,6 +61,7 @@ public:
             if(mp.find(sum - K) != mp.end()) {
                 ans = max(ans , i - mp[sum - K]) ;
             }
+            // if some item has not occured before -> then update only
             if(mp.find(sum) == mp.end()) {
                 mp[sum]= i ;
             }
