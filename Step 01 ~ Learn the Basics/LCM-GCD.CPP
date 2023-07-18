@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std ;
 
+// gcd (a, b) = gcd(b, a%b)
+
 class Solution {
   public:
     vector<long long> lcmAndGcd(long long A , long long B) {
