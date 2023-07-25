@@ -1,5 +1,6 @@
 # Striver-A2Z-DSA-Sheet-CPP
-![img](https://github.com/dhruv-yadav-nitj/Striver-A2Z-DSA-Sheet-CPP/blob/main/40lAaDv7.png)
+![1e809FJHs23](https://github.com/dhruv-yadav-nitj/Striver-A2Z-DSA-Sheet-CPP/assets/97078553/9ee10b78-536d-4f8c-a9cf-73a49694807f)
+
 
 Welcome to the Striver's A2Z DSA Sheet Solutions repository! This repository contains solutions to all the problems from Striver's A2Z DSA Sheet, implemented in C++ (and sometimes in Python) by me.
 ## About Striver's A2Z DSA Sheet
