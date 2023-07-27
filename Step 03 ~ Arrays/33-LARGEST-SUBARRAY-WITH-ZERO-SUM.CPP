@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// VERY GOOD PROBLEM (this approach is very handy in many other problems too)
+
 class Solution {
 public:
     int maxLen(vector<int> &A, int n) {
