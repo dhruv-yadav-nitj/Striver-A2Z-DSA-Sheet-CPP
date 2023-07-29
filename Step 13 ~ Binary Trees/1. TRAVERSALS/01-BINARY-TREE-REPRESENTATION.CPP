@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// https://www.codingninjas.com/codestudio/problems/create-binary-tree_8360671?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf
+
+// Problem : Convert the given Array into a Complete Binary Tree (all levels are filled from left to right)
+
 class Node
 {
 public:
