@@ -11,9 +11,11 @@ public:
 
         // at any index we have two choices either pick or not pick (but we can only pick the curr element if its greater than prev)
         int pick=0, not_pick = 0 ;
+        // we would surely pick the current element if its greater than the prev element to increase the length of subsequence
         if(arr[index] > prev) {
             pick = 1 + recursion(arr, n, index +1, arr[index]) ;
         }
+        // else we also have option to not pick
         not_pick = recursion(arr, n, index+1, prev) ;
 
         return max(pick, not_pick) ;
