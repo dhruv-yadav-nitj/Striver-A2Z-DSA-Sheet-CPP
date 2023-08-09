@@ -15,6 +15,7 @@ struct Node
 };
 
 // just added some BST property to the finding LCA in binary tree -> else all the approach is same
+// https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-bst/1
 
 class Solution
 {

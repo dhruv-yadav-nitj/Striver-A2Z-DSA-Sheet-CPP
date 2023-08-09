@@ -3,6 +3,14 @@ using namespace std;
 
 // https://rb.gy/cg1cb
 
+struct Node
+{
+    int data;
+    Node *left;
+    Node *right;
+    Node(int x) : data(x), left(NULL), right(NULL) {}
+};
+
 bool check(Node *curr, int x)
 {
 
