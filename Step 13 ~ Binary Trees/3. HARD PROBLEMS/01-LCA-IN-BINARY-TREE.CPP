@@ -1,26 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node {
-    int data; struct Node *left; struct Node *right;
-
-    Node(int x) {
-        data = x; left = right = NULL;
-    }
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
 class Solution {
 public:
-    Node *lca(Node *root, int n1, int n2) {
+    TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
+        
+        if(root == NULL or root -> val == p->val or root -> val == q->val) {
+            return root ;
+        }
 
-        if(root == NULL or root ->data == n1 or root -> data == n2) {return root ;}
+        TreeNode *left, *right ;
+        left= lowestCommonAncestor(root -> left, p, q) ;
+        right= lowestCommonAncestor(root -> right, p, q) ;
 
-        Node* left= lca(root -> left, n1, n2) ; Node* right = lca(root -> right, n1, n2) ;
-
-        if(left == NULL) {return right ;}
-        else if(right == NULL) {return left ;}
-
+        if(!left) {return right ;}
+        if(!right) {return left ;}
         else{
+            // means both left and right returned some valid value
             return root ;
         }
 
