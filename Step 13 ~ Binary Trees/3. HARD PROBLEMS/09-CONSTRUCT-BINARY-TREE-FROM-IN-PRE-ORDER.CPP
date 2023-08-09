@@ -30,6 +30,8 @@ public:
         root->left = construct (preorder, inorder, inStart, index -1, preStart +1, preStart + nLeft, mp) ;
         root->right = construct(preorder, inorder, index+1, inEnd, preStart+nLeft+1, preEnd, mp) ;
 
+        return root ;
+
     }
 
     TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
