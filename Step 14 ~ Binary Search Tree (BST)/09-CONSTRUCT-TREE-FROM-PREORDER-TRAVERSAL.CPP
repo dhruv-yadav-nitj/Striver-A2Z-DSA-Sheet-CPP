@@ -49,8 +49,8 @@ public:
 
     }
 };
-
-// approach #2 : by just using the given preorder traversal
+// approach #2 : by just using the given preorder traversal (just take the idea from vdo and apply basic recursion)
+// https://youtu.be/SXKAD2svfmI
 class Solution {
 public:
     int index = 0 ;
