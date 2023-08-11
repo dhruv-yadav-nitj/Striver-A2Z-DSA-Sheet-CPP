@@ -56,6 +56,8 @@ TreeNode<int>* construct (vector<int>in , int l, int r) {
 TreeNode<int> *balancedBst(TreeNode<int> *root) {
 
     vector<int>in; inorder(root, in) ;
+
+    // approach : find the inorder of the given bst -> construct a new bst using this inorder and simple recursion, utilising the fact that inorder is sorted traversal of bst
     
     return construct(in, 0, in.size()-1) ;
 }
