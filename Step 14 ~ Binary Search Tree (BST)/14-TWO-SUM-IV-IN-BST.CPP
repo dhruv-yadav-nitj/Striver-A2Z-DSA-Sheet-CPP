@@ -19,7 +19,7 @@ struct TreeNode
 class BSTIterator {
 public:
 
-    stack<TreeNode*> st ; bool reverse = true ;
+    stack<TreeNode*> st ; bool reverse ;
 
     BSTIterator(TreeNode *root, bool rev) {
         reverse = rev ; // update the reverse according to the instruction
