@@ -13,22 +13,21 @@ struct Node {
 
 // Diameter -> longest distance b/w any two nodes of the tree (it may or may not path through root)
 
-// intuition -> based on height of binary tree and basic recursion
-
+// intuition : height of binary tree
 class Solution {
 public:
-    int h (Node* node, int&ans) {
-        if(node == NULL) {return 0 ;}
+    int h (Node* root, int &ans) {
 
-        int lefti = h (node -> left , ans) , righti = h (node-> right , ans) ;
-        ans = max(ans, lefti + righti + 1) ;
-        return 1 + max(lefti, righti) ;
+        if(!root){return 0 ;}
+
+        int l = h (root -> left, ans) , r = h (root ->right, ans) ;
+        ans = max(ans , 1 + l+ r) ;
+
+        return 1 + max(l, r);
+
     }
     int diameter(Node *root) {
-        // Your code here
-
-        int ans =1 ;
-        h (root, ans) ; return ans ;
-
+        int ans = 0 ;
+        h (root, ans); return ans ;
     }
 };

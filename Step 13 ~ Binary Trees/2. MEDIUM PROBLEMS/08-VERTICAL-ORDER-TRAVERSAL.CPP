@@ -13,6 +13,8 @@ struct Node
     }
 };
 
+// https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1
+
 class Solution {
 public:
     vector<int> verticalOrder(Node *root) {
