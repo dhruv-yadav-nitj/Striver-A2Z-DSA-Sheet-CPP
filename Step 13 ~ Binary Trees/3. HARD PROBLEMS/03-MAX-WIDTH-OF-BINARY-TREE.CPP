@@ -15,47 +15,52 @@ struct Node
 };
 
 // first I though I should apply the vertical traversal approach (dividing each vertical column using the coordinate system) -> but that approach would be giving error for cases such as 1 3 10 5 7 9 N 5 5 9 2 10 where ans should be 5 but this apporach would give 4
-
+struct TreeNode
+{
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
 // correct approach
 
 // LeetCode Version
-class Solution {
+// https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+class Solution
+{
 public:
-    int getMaxWidth(Node *root) {
+    int widthOfBinaryTree(TreeNode *root) {
 
-        if(!root) {return 0 ;}
+        int cnt =0 ; if(!root){return cnt ;}
 
-        int ans = 0; queue<pair<Node*, int>> q ;
-
-        q.push({root, 0}) ;
-
+        queue <pair<TreeNode*, long long>> q ; q.push({root, 0}) ;
         while(!q.empty()) {
 
-            int size= q.size() ;
-
-            // to avoid integer overflow take a reference point (which would be the left most index in a level)
-            int mini = q.front().second ;
-            int leftMost, rightMost ;
-            for(int k =0; k < size ; k++) {
-
-                Node* curr= q.front().first ; int i = q.front().second - mini ; q.pop() ;
-                
-                if(k==0){leftMost = i ;}
-                if(k == size-1) {rightMost= i ;}
-
-                if(curr -> left){q.push({curr-> left, 2*i+1}) ;}
-                if(curr -> right){q.push({curr-> right, 2*i+2}) ;}
-
+            int size = q.size() ;
+            int l , r ; int ref= q.front().second ;
+            for(int i=0 ;i < size; i++) {
+                TreeNode* curr = q.front().first ; int add = q.front().second-ref ; q.pop() ;
+                if(i == 0) {
+                    l = add ;
+                }
+                if(i == size-1) {
+                    r = add ;
+                }
+                if(curr -> left) {
+                    q.push({curr -> left, (long long)(add) * 2 + 1}) ;
+                }
+                if(curr ->right) {
+                    q.push({curr->right, (long long)(add) * 2 + 2}) ;
+                }
             }
-
-            ans = max(ans, rightMost - leftMost +1) ;
-
+            cnt = max(cnt, (r-l+1));
         }
+        return cnt ;
 
-        return ans ;
     }
 };
-
 // GfG Version (EASY)
 class Solution {
 public:
