@@ -9,6 +9,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// RECURSIVE
 class Solution {
 public:
     ListNode* recursion (ListNode* head){
@@ -29,5 +30,25 @@ public:
 
         return recursion(head) ;
 
+    }
+};
+
+// ITERATIVE
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+        // if the linked list is empty or has only single element
+        if(!head or !(head -> next)) {
+            return head ;
+        }
+        
+        ListNode *prev = NULL , *curr = head ;
+        while(curr) {
+            ListNode* temp = curr ->next ;
+            curr -> next = prev ;
+            prev = curr ;curr = temp ;
+        }
+        return prev ;
     }
 };
