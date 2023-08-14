@@ -1,49 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Stack class.
+// Implementation of Stack is very easy as compared to Implementation of Queue, bcz in Stack its unidirectional (we insert and remove from one side only), we have to maintain only one pointer i.e., top but in queue we need to manage both pointers front and end
+
 class Stack {
-    int topp=0, end=-1, n=0; vector<int> arr;
+    int topp = -1 ; vector<int> arr ; int n ;
 public:
     Stack(int capacity) {
-        arr.resize(capacity) ;
-        n = capacity ;
+        this -> n = capacity ;
+        arr.resize(n) ;
     }
 
     void push(int num) {
+
         if(!isFull()) {
-            end = (end+1)%n ;
-            arr[end] = num ;
+            arr[++topp]=num ;
+        }
+        else{
+            // stack overflow
         }
     }
 
     int pop() {
-        if(isEmpty()) {return -1 ;}
-        int temp = arr[topp] ;
-        topp = (topp +1)%n ; if(topp > end) {topp = 0, end = -1 ;}
+        if(isEmpty()) {
+            return -1 ;
+        }
+        else{
+            int temp = arr[topp] ; topp-- ; return temp ;
+        }
     }
     
     int top() {
-        if(!isEmpty()) {
+        if(isEmpty()) {
+            return -1 ;
+        }
+        else{
             return arr[topp] ;
         }
     }
     
     int isEmpty() {
-        if(end==-1){
-            return 1 ; 
-        }
-        else{
-            return 0 ;
-        }
+        if(topp==-1){return 1;}else{return 0;}
     }
     
     int isFull() {
-        if((end+1)%n == topp){
-            return 1 ;
-        }
-        else{
-            return 0 ;
-        }
+        if(topp==n-1){return 1;}else{return 0;}        
     }
 };
