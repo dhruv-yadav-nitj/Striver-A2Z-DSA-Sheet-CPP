@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// PROBLEM LINK
+// https://rb.gy/p30t0
+
 // Implementation of Stack is very easy as compared to Implementation of Queue, bcz in Stack its unidirectional (we insert and remove from one side only), we have to maintain only one pointer i.e., top but in queue we need to manage both pointers front and end
 
 class Stack {
