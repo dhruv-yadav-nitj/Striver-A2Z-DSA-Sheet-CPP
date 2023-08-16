@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// IMPORTANT PROBLEM
+// ITS LOGIC IS VERY EASY -> BUT IMPLEMENTATION IS QUITE LENGTHY
+
 // https://leetcode.com/problems/lru-cache/description/
 
 // using linked list since we need O(1) time in get and put function
