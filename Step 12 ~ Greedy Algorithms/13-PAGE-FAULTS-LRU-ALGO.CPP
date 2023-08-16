@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// PROBLEM LINK
+// https://rb.gy/00nkd
+
 // the ques is very very much simple just watch this video to understand LRU (Least Recently Used) Algorithm
 // https://www.youtube.com/watch?v=dYIoWkCvd6A
 // for further help : https://youtu.be/U8K1cpdMN4I
