@@ -3,6 +3,9 @@ using namespace std ;
 
 // very important question for interviews
 
+// this same problem done by me using extra space
+// https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1?page=1&status[]=unsolved&sortBy=submissions
+
 struct ListNode {
     int val;
     ListNode *next;
@@ -11,6 +14,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// Optimised Approach -> HARD to explain
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
