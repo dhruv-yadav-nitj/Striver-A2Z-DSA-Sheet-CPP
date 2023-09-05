@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// most asked interview question on linked list
+// most asked interview question on linked list -> though bahut fuddu ques hain
+// https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1
 
 struct Node {
     int data; Node *next; Node *arb;
@@ -11,41 +12,23 @@ struct Node {
     }
 };
 
-class Solution{
-public:
-    Node *copyList(Node *head){
-        // Write your code here
-
-        unordered_map<Node*, Node*> mp ;
-        Node* temp = head ;
-        while(temp != NULL){
-            Node* clone = new Node(temp -> data) ;
-            mp[temp] = clone ;
-            temp = temp-> next ;
+class Solution
+{
+    public:
+    Node *copyList(Node *head)
+    {
+        unordered_map<Node*, Node*> mp ; Node* temp = head ;
+        while(temp) {
+            mp[temp] = new Node(temp->data) ;
+            temp = temp -> next ;
         }
-
-        Node* curr= head ;
-        while(curr != NULL){
-
-            Node* clone = mp[curr] ;
-            if(curr -> next != NULL){
-                clone -> next = mp[curr -> next] ;
-            }
-            else{
-                clone -> next= NULL ;
-            }
-
-            if(curr -> arb != NULL){
-                clone -> arb = mp[curr -> arb] ;
-            }
-            else{
-                clone -> arb= NULL ;
-            }
-
-            curr = curr -> next ;
+        temp = head ;
+        while(temp) {
+            mp[temp]-> next = mp[temp-> next] ;
+            mp[temp]-> arb = mp[temp->arb] ;
+            temp = temp -> next ;
         }
-
-        return mp[head] ;
-
+        return mp[head]; 
     }
+
 };
