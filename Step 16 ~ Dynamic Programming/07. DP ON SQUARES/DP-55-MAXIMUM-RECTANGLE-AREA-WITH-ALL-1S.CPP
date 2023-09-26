@@ -6,6 +6,8 @@ using namespace std;
 // https://youtu.be/X0X6G-eWgQ8
 // https://youtu.be/jC_cWLy7jSI
 
+// Visit Stacks Folder for the Code of Largest Rectangle Area in Histogram
+
 class Solution {
 public:
     // pre-required function from MAX Rectangle Area in histogram problem
